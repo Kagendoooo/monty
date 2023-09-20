@@ -44,4 +44,6 @@ int malloc_error(void);
 int unknown_op_error(char *opcode, unsigned int line_number);
 int no_int_error(unsigned int line_number);
 
+
+char **strtow(char *str, char *deli);
 #endif 
