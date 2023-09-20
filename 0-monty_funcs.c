@@ -3,7 +3,7 @@
  * monty_push - Push value to a stack_t linked list
  * @stack: Pointer to first node of a stack_t linked list
  * @line_number: current working line number of a Monty bytecodes file
-*/
+ */
 void monty_push(stack_t **stack, unsigned int line_number)
 {
 	stack_t *temp, *latest;
@@ -58,7 +58,7 @@ void monty_push(stack_t **stack, unsigned int line_number)
  * monty_pall - Prints the values of a stack_t
  * @stack: Pointer to first node of a stack_t
  * @line_number: current working line number of a Monty bytecodes file
-*/
+ */
 void monty_pall(stack_t **stack, unsigned int line_number)
 {
 	stack_t *temp = (*stack)->next;
@@ -70,3 +70,22 @@ void monty_pall(stack_t **stack, unsigned int line_number)
 	}
 	(void)line_number;
 }
+
+/**
+ * monty_pint - prints the head value of a stack linked list
+ * @stack: pointer to head of stacked lnked list
+ * @line_number: current line num of monty
+ */
+
+void monty_pint(stack_t **stack, unsigned int line_number)
+{
+	if ((*stack)->next == NULL)
+	{
+		set_op_tok_error(pint_error(line_number));
+		return;
+	}
+
+	printf("%d\n", (*stack)->next->n);
+}
+
+
