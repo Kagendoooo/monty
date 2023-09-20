@@ -37,9 +37,11 @@ void monty_pint(stack_t **stack, unsigned int line_number);
 void monty_push(stack_t **stack, unsigned int line_number);
 void monty_pall(stack_t **stack, unsigned int line_number);
 
-int run_monty(int script_fd);
+/*errors.c function*/
 int usage_error(void);
 int f_open_error(char *filename);
 int malloc_error(void);
+int unknown_op_error(char *opcode, unsigned int line_number);
+int no_int_error(unsigned int line_number);
 
 #endif 
