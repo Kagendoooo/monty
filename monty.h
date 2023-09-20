@@ -34,7 +34,7 @@ typedef struct instruction_s
 } instruction_t;
 
 void monty_pint(stack_t **stack, unsigned int line_number);
-void monty_push(stack_t **stack, unsigned int line_number)
-
+void monty_push(stack_t **stack, unsigned int line_number);
+void monty_pall(stack_t **stack, unsigned int line_number);
 
 #endif 
