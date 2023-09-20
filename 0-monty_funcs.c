@@ -1,4 +1,8 @@
+#include <stdio.h>
+#include <stddef.h>
 #include "monty.h"
+#include <stdlib.h>
+
 /**
  * monty_push - Push value to a stack_t linked list
  * @stack: Pointer to first node of a stack_t linked list
