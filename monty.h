@@ -65,7 +65,15 @@ int malloc_error(void);
 int unknown_op_error(char *opcode, unsigned int line_number);
 int no_int_error(unsigned int line_number);
 int pop_error(unsigned int line_number);
+
+
+
 char **strtow(char *str, char *deli);
+int is_deli(char c, char *deli);
+int get_word_length(char *str, char *deli);
+int get_word_count(char *str, char *deli);
+char *get_next_word(char *str, char *deli);
+
 
 int main(int argc, char **argv);
 int exe_monty(FILE *script_fd);
