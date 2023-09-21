@@ -2,6 +2,43 @@
 #include <string.h>
 
 /**
+ * token_arr_len - get the len of current op_toks
+ * Return: Len of current op_toks
+ */
+unsigned int token_arr_len(void)
+{
+	unsigned int tok_len = 0;
+
+	while (op_toks[tok_len])
+		tok_len++;
+	return (tok_len);
+}
+
+/**
+ * is_empty_line - Checks if a line read only contains delimiters.
+ * @line: pointer to the line
+ * @delims: A string of delimiter characters
+ * Return: 0 / -1
+ */
+int is_empty_line(char *line, char *delims)
+{
+	int i, j;
+
+	for (i = 0; line[i]; i++)
+	{
+		for (j = 0; delims[j]; j++)
+		{
+			if (line[i] == delims[j])
+				break;
+		}
+		if (delims[j] == '\0')
+			return (0);
+	}
+
+	return (1);
+}
+
+/**
  * get_op_func - links an opcode with its corresponding function
  * @opcode: opcode to match.
  * Return: A pointer to the function.

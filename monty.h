@@ -45,6 +45,8 @@ typedef struct instruction_s
 int init_stack(stack_t **stack);
 int check_mode(stack_t *stack);
 void free_stack(stack_t **stack);
+int is_empty_line(char *line, char *delims);
+unsigned int token_arr_len(void);
 
 void monty_pint(stack_t **stack, unsigned int line_number);
 void monty_push(stack_t **stack, unsigned int line_number);
