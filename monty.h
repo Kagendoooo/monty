@@ -57,7 +57,11 @@ void monty_sub(stack_t **stack, unsigned int line_number);
 void monty_div(stack_t **stack, unsigned int line_number);
 void monty_mul(stack_t **stack, unsigned int line_number);
 void monty_mod(stack_t **stack, unsigned int line_number);
-int pop_error(unsigned int line_number);void monty_nop(stack_t **stack, unsigned int line_number);
+int pop_error(unsigned int line_number);
+void monty_nop(stack_t **stack, unsigned int line_number);
+void monty_pchar(stack_t **stack, unsigned int line_number);
+void monty_pstr(stack_t **stack, unsigned int line_number);
+
 /*errors.c function*/
 int usage_error(void);
 int f_open_error(char *filename);
