@@ -87,7 +87,7 @@ int get_word_length(char *str, char *deli)
 	while (*(str + x))
 	{
 		if (is_deli(str[x], deli))
-		       waiting = 1;
+			waiting = 1;
 		else if (waiting)
 		{
 			wlength++;
