@@ -94,9 +94,9 @@ void monty_pint(stack_t **stack, unsigned int line_number)
 
 /**
  * monty_pop - Remove top value element of linked list
- * @stack: Pointer to top mode node of linked list
+ * @stack: Pointer to top node of linked list
  * @line_number: current working line number of a Monty bytecodes file
-*/
+ */
 void monty_pop(stack_t **stack, unsigned int line_number)
 {
 	stack_t *next = NULL;
@@ -112,4 +112,29 @@ void monty_pop(stack_t **stack, unsigned int line_number)
 	if (next)
 		next->prev = *stack;
 	(*stack)->next = next;
+}
+
+/**
+ * monty_swap - Swap top two value elements of linked list
+ * @stack: Pointer to the top node of linked list
+ * @line_number: current working line number of a Monty bytecodes file
+*/
+void monty_swap(stack_t **stack, unsigned int line_number)
+{
+	stack_t *temp;
+
+	if ((*stack)->next == NULL || (*stack)->next->next == NULL)
+	{
+		set_op_tok_error(short_stack_error(line_number, "swap"));
+		return;
+	}
+
+	temp = (*stack)->next->next;
+	(*stack)->next->next = temp->next;
+	(*stack)->next->prev = temp;
+	if (temp->next)
+		temp->next->prev = (*stack)->next;
+	temp->next = (*stack)->next;
+	temp->prev = *stack;
+	(*stack)->next = temp;
 }
