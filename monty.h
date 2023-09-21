@@ -44,6 +44,10 @@ void monty_push(stack_t **stack, unsigned int line_number);
 void monty_pall(stack_t **stack, unsigned int line_number);
 void monty_pop(stack_t **stack, unsigned int line_number);
 void monty_swap(stack_t **stack, unsigned int line_number);
+void monty_sub(stack_t **stack, unsigned int line_number);
+void monty_div(stack_t **stack, unsigned int line_number);
+void monty_mul(stack_t **stack, unsigned int line_number);
+void monty_mod(stack_t **stack, unsigned int line_number);
 
 /*errors.c function*/
 int usage_error(void);
@@ -60,5 +64,4 @@ void free_tokens(void);
 void free_stack(stack_t **stack);
 int short_stack_error(unsigned int line_number, char *op);
 int div_error(unsigned int line_number);
-
-#endif 
+#endif
