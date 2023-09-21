@@ -1,6 +1,12 @@
 #ifndef MONTY_H
 #define MONTY_H
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+
+extern char **op_toks;
+
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -48,5 +54,9 @@ char **strtow(char *str, char *deli);
 
 int main(int argc, char **argv);
 int exe_monty(FILE *script_fd);
+void free_tokens(void);
+void free_stack(stack_t **stack);
+int short_stack_error(unsigned int line_number, char *op);
+int div_error(unsigned int line_number);
 
 #endif 
