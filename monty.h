@@ -5,6 +5,9 @@
 #include <stdlib.h>
 #include <unistd.h>
 
+#define STACK 0
+#define QUEUE 1
+
 extern char **op_toks;
 
 /**
@@ -38,6 +41,10 @@ typedef struct instruction_s
 	char *opcode;
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
+
+int init_stack(stack_t **stack);
+int check_mode(stack_t *stack);
+void free_stack(stack_t **stack);
 
 void monty_pint(stack_t **stack, unsigned int line_number);
 void monty_push(stack_t **stack, unsigned int line_number);
