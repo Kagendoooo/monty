@@ -47,5 +47,6 @@ int no_int_error(unsigned int line_number);
 char **strtow(char *str, char *deli);
 
 int main(int argc, char **argv);
+int exe_monty(FILE *script_fd);
 
 #endif 
