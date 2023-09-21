@@ -22,3 +22,14 @@ int div_error(unsigned int line_number)
 	fprintf(stderr, "L%u: division by zero\n", line_number);
 	return (EXIT_FAILURE);
 }
+
+/**
+ * pop_error - prints pop error msg for empty stacks
+ * @line_number: Line number with error
+ * Return: EXIT_FAILURE
+ */
+int pop_error(unsigned int line_number)
+{
+	fprintf(stderr, "L%u: can't pop an empty stack\n", line_number);
+	return (EXIT_FAILURE);
+}

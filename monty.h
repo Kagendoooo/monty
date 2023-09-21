@@ -48,14 +48,14 @@ void monty_sub(stack_t **stack, unsigned int line_number);
 void monty_div(stack_t **stack, unsigned int line_number);
 void monty_mul(stack_t **stack, unsigned int line_number);
 void monty_mod(stack_t **stack, unsigned int line_number);
-void monty_nop(stack_t **stack, unsigned int line_number);
+int pop_error(unsigned int line_number);void monty_nop(stack_t **stack, unsigned int line_number);
 /*errors.c function*/
 int usage_error(void);
 int f_open_error(char *filename);
 int malloc_error(void);
 int unknown_op_error(char *opcode, unsigned int line_number);
 int no_int_error(unsigned int line_number);
-
+int pop_error(unsigned int line_number);
 char **strtow(char *str, char *deli);
 
 int main(int argc, char **argv);
