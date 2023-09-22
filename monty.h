@@ -7,6 +7,7 @@
 
 #define STACK 0
 #define QUEUE 1
+#define DELIMS " \n\t\a\b"
 
 extern char **op_toks;
 
@@ -61,6 +62,11 @@ int pop_error(unsigned int line_number);
 void monty_nop(stack_t **stack, unsigned int line_number);
 void monty_pchar(stack_t **stack, unsigned int line_number);
 void monty_pstr(stack_t **stack, unsigned int line_number);
+void monty_rotl(stack_t **stack, unsigned int line_number);
+void monty_rotr(stack_t **stack, unsigned int line_number);
+void monty_stack(stack_t **stack, unsigned int line_number);
+void monty_queue(stack_t **stack, unsigned int line_number);
+
 
 /*errors.c function*/
 int usage_error(void);
@@ -69,8 +75,8 @@ int malloc_error(void);
 int unknown_op_error(char *opcode, unsigned int line_number);
 int no_int_error(unsigned int line_number);
 int pop_error(unsigned int line_number);
-
-
+int pchar_error(unsigned int line_number, char *msg);
+int pint_error(unsigned int line_number);
 
 char **strtow(char *str, char *deli);
 int is_deli(char c, char *deli);
