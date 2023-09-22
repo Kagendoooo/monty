@@ -75,13 +75,10 @@ int malloc_error(void);
 int unknown_op_error(char *opcode, unsigned int line_number);
 int no_int_error(unsigned int line_number);
 int pop_error(unsigned int line_number);
-<<<<<<< HEAD
 int pchar_error(unsigned int line_number, char *msg);
 int pint_error(unsigned int line_number);
-=======
 
 void set_op_tok_error(int error_code);
->>>>>>> refs/remotes/origin/master
 
 char **strtow(char *str, char *deli);
 int is_deli(char c, char *deli);
