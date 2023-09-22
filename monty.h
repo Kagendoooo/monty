@@ -70,7 +70,7 @@ int unknown_op_error(char *opcode, unsigned int line_number);
 int no_int_error(unsigned int line_number);
 int pop_error(unsigned int line_number);
 
-
+void set_op_tok_error(int error_code);
 
 char **strtow(char *str, char *deli);
 int is_deli(char c, char *deli);
