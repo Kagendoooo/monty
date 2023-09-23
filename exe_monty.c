@@ -1,3 +1,4 @@
+#define _GNU_SOURCE
 #include "monty.h"
 #include <string.h>
 #include <stdio.h>
@@ -37,7 +38,6 @@ int is_empty_line(char *line, char *delims)
 
 	return (1);
 }
-
 /**
  * get_op_func - links an opcode with its corresponding function
  * @opcode: opcode to match.
@@ -46,9 +46,9 @@ int is_empty_line(char *line, char *delims)
 void (*get_op_func(char *opcode))(stack_t**, unsigned int)
 {
 	instruction_t op_funcs[] = {
+		{"push", monty_push},
 		{"pall", monty_pall},
 		{"pint", monty_pint},
-		{"push", monty_push},
 		{"pop", monty_pop},
 		{"swap", monty_swap},
 		{"add", monty_add},
@@ -57,12 +57,12 @@ void (*get_op_func(char *opcode))(stack_t**, unsigned int)
 		{"div", monty_div},
 		{"mul", monty_mul},
 		{"mod", monty_mod},
-		{"queue", monty_queue},
 		{"pchar", monty_pchar},
 		{"pstr", monty_pstr},
 		{"rotl", monty_rotl},
 		{"rotr", monty_rotr},
 		{"stack", monty_stack},
+		{"queue", monty_queue},
 		{NULL, NULL}
 	};
 	int i;
@@ -93,7 +93,7 @@ int exe_monty(FILE *script_fd)
 	if (init_stack(&stack) == EXIT_FAILURE)
 		return (EXIT_FAILURE);
 
-	while (fgets(line, len, script_fd) != NULL)
+	while (getline(&line, &len, script_fd) != -1)
 	{
 		line_number++;
 		op_toks = strtow(line, DELIMS);
